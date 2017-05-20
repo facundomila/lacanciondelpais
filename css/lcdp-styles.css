@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+	background-color: #FFF;
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 12px;
+	line-height: 20px;
+}
+.clear {
+    height: 12px;
+}
+.clear-big {
+    height: 30px;
+}
+.agenda-link{
+    border: 1px solid red;
+    width: 100%;
+    display: inline-block;
+    padding: 8px;
+}
+.agenda-link .titulo-agenda{
+    position: relative;
+    float: left;
+    width: 40%;
+    margin-left: 2%;
+    font-size: 30px;
+    color: #265d8c;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+.agenda-link .inner{
+    float: left;
+    width: 32%;
+    font-size: 14px;
+    color: #265d8c;
+    letter-spacing: 7px;
+    font-weight: bolder;
+    margin-left: 3%;
+}
+
+@media(max-width: 800px) {
+    .agenda-link .btn {
+        font-size: 36px;
+    }
+}
+
+.agenda-link .btn {
+    float: right;
+    width: 18%;
+    font-size: 11px;
+    color: #eee;
+    background-color: #265d8c;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+div.ad-one {
+    width: 98%;
+    margin: 15px 1%;
+    height: 50px;
+    background-color: red;
+    animation-name: fade-toggle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fade-toggle {
+    0%   {background-color: red;}
+    25%  {background-color: blue;}
+    50%  {background-color: green;}
+    75%  {background-color: yellow;}
+    100% {background-color: red;}
+}
+
+.filter {
+    background-color: #265d8c;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.nota-box {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+}
+.nota-box img{
+    position: relative;
+    top: 0%;
+    left: -50%;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0.6;
+    height: 100%;
+    transition: .5s ease;
+    background-color: #265d8c;
+}
+.nota-box:hover .overlay {
+    opacity: 0.3;
+    height: 100%;
+    background-color: yellow;
+    cursor:pointer
+}
+.nota-box p.fecha{
+    font-size: 16px;
+    z-index: 2000;
+}
+.w3-third {
+    width: 30% !important;
+    margin: 1%;
+}
+.text-content {
+    padding: 20px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.text-content-b {
+    padding: 10px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.text-content a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.picture {
+    display: block;
+}
