@@ -28,6 +28,8 @@ if (isset($ogImg)) {
 <!--fuentes css-->
 <link type="text/css" rel="stylesheet" href="fa/fa.css">
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
 <link type="text/css" rel="stylesheet" href="slider_nuevo/css/skitter.styles.css">

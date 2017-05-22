@@ -1,0 +1,57 @@
+
+RewriteEngine On
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName lacanciondelpais.com.ar
+AuthUserFile /home/cancion/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/cancion/public_html/_vti_pvt/service.grp
+
+RewriteCond %{SERVER_PORT} ^80
+RewriteRule https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+RewriteRule ^admin(.*)$ _admin$1 [NC,L]
+
+RewriteRule ^busqueda$ busqueda.php [NC,L]
+RewriteRule ^busqueda2$ busqueda2.php [NC,L]
+
+RewriteRule ^notas/provincias/([a-z0-9\-]+)(\/*)$ notas-posts.php?sLink=$1 [NC,L]
+RewriteRule ^notas/provincias/([a-z0-9\-]+)/pagina-([0-9]+).html$ notas-posts.php?sLink=$1&pag=$2 [NC,L]
+
+RewriteRule ^notas/([a-z0-9\-]+)(\/*)$ notas-seccion.php?sLink=$1 [NC,L]
+RewriteRule ^notas/([a-z0-9\-]+)/pagina-([0-9]+).html$ notas-seccion.php?sLink=$1&pag=$2 [NC,L]
+RewriteRule ^notas(\-preview)?/([a-z0-9\-]+)/([a-z0-9\-]+).html$ nota.php?preview=$1&sLink=$2&link=$3 [NC,L]
+RewriteRule ^notas/([a-z0-9\-]+)/([a-z0-9\-]+)(\/*)$ notas-seccion.php?sLink=$1&subLink=$2 [NC,L]
+RewriteRule ^notas/([a-z0-9\-]+)/([a-z0-9\-]+)/pagina-([0-9]+).html$ notas-seccion.php?sLink=$1&subLink=$2&pag=$3 [NC,L]
+RewriteRule ^notas(\-preview)?/([a-z0-9\-]+)/([a-z0-9\-]+)/([a-z0-9\-]+).html$ nota.php?preview=$1&sLink=$2&subLink=$3&link=$4 [NC,L]
+
+
+RewriteRule ^notas2/([a-z0-9\-]+)(\/*)$ notas-seccion2.php?sLink=$1 [NC,L]
+RewriteRule ^notas2/([a-z0-9\-]+)/pagina-([0-9]+).html$ notas-seccion2.php?sLink=$1&pag=$2 [NC,L]
+RewriteRule ^notas2(\-preview)?/([a-z0-9\-]+)/([a-z0-9\-]+).html$ nota2.php?preview=$1&sLink=$2&link=$3 [NC,L]
+RewriteRule ^notas2/([a-z0-9\-]+)/([a-z0-9\-]+)(\/*)$ notas-seccion2.php?sLink=$1&subLink=$2 [NC,L]
+RewriteRule ^notas2/([a-z0-9\-]+)/([a-z0-9\-]+)/pagina-([0-9]+).html$ notas-seccion2.php?sLink=$1&subLink=$2&pag=$3 [NC,L]
+RewriteRule ^notas2(\-preview)?/([a-z0-9\-]+)/([a-z0-9\-]+)/([a-z0-9\-]+).html$ nota2.php?preview=$1&sLink=$2&subLink=$3&link=$4 [NC,L]
+
+
+
+
+RewriteRule ^agenda.html$ agenda.php [NC,L]
+RewriteRule ^contacto.html$ contacto.php [NC,L]
+
+RewriteRule ^agenda2.html$ agenda2.php [NC,L]
+RewriteRule ^contacto2.html$ contacto2.php [NC,L]
+
+
+
+RewriteRule ^borrar-suscripcion-([a-z0-9]{32}).html$ newsborrar.php?c=$1 [L,NC]
