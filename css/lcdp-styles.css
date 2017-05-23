@@ -1,11 +1,12 @@
 @font-face {
     font-family: 'Titillium Web', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 body {
 	background-color: #FFF;
-    font-family: 'Titillium Web', sans-serif !important;
-    font-size: 12px;
+  font-family: 'Titillium Web', sans-serif !important;
+  font-size: 12px;
 	line-height: 20px;
 }
 .clear {
@@ -55,7 +56,7 @@ body {
     font-size: 11px;
     color: #eee;
     background-color: #1b4b5e;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     font-weight: bolder;
 }
 div.ad-one {

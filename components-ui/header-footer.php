@@ -2,7 +2,7 @@
 div.name {
     max-width: 120px;
     line-height: 24px;
-	font-family: 'Titillium Web', sans-serif !important;
+	  font-family: 'Titillium Web', sans-serif !important;
     font-size: 22px;
     font-weight: bolder;
     color: #1b4b5e;
@@ -89,7 +89,7 @@ div.social a:hover{
     text-decoration: none;
 }
 div.social input{
-   width: 80%;
+   width: 92%;
    box-sizing: border-box;
    border: 0px;
    color: #fff;
@@ -100,13 +100,14 @@ div.social input{
    margin: 26px 2% 0 0;
 }
 div.social .btn{
-   width: 18%;
+   width: 6%;
    color: #ff4330;
    margin-top: 18px;
-   background-color: #fff;
+   background-color: transparent;
    font-size: 14px;
    cursor: pointer;
    float: right;
+   padding: 7px 2px;
 }
 div.logo {
   position: relative;

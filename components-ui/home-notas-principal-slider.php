@@ -6,11 +6,10 @@
     }
     .text {
         position: absolute;
-        top: 135px;
-        left: 30%;
+        top: 80px;
+        left: 20%;
         color: #fff;
-        font-size: 15px;
-        width: 40%;
+        width: 60%;
         height: 200px;
         text-align: center;
     }
@@ -20,26 +19,24 @@
     .sec {
        position: relative;
        width: 100%;
-       margin-top: 15px;
+       margin-top: 30px;
+       font-family: 'Fjalla One', sans-serif;
        color: #fff;
-       font-size: 16px;
+       letter-spacing: 3px;
+       text-transform: uppercase;
+       font-size: 18px;
        text-align: center;
        z-index: 1000;
     }
     .tit{
+        font-family: 'Fjalla One', sans-serif;
         position: relative;
+        text-transform: uppercase;
+        letter-spacing: 3px;
         width: 100%;
-        margin-top: 15px;
+        margin-top: 24px;
         color: #fff;
-        font-size: 24px;
-        text-align: center;
-        z-index: 1000;
-    }
-    .bajada{
-        position: relative;
-        margin-top: 15px;
-        color: #fff;
-        font-size: 14px;
+        font-size: 36px;
         text-align: center;
         z-index: 1000;
     }
@@ -47,11 +44,11 @@
         width: 100%;
         height: 100px;
         position: relative;
-        left: -50px;
+        left: -42px;
     }
     div.logo-slider img {
-        width: 100px;
-        height: 100px;
+        width: 84px;
+        height: 84px;
         position: absolute;
     }
     .mySlides .filter {
@@ -67,13 +64,14 @@
       margin: 0 auto;
       padding: 0;
       width: 100%;
-      height: 480px;
+      height: 465px;
       position: relative;
       -webkit-box-shadow: inset 0px 0px 126px -2px rgba(0,0,0,0.75);
       -moz-box-shadow: inset 0px 0px 126px -2px rgba(0,0,0,0.75);
       box-shadow: inset 0px 0px 126px -2px rgba(0,0,0,0.75);
     }
     .numbertext {
+      font-family: 'Fjalla One', sans-serif;
       color: #f2f2f2;
       font-size: 12px;
       padding: 8px 12px;
@@ -81,8 +79,8 @@
       top: 0;
     }
     .dot {
-      height: 12px;
-      width: 12px;
+      height: 10px;
+      width: 10px;
       margin: 0 2px;
       background-color: #fff;
       border-radius: 50%;
@@ -140,7 +138,6 @@ if ($Rh["principal"]) {
 			$st="<strong class=\"upper\">".$R["seccion"]."</strong> ";
 
 		echo "<div class=\"mySlides fade\">
-		            <div class=\"filter\"></div>
 					<img src=\"sitio/jpg/".$R["img_1"]."\" style=\"width:100%;\">
 					<div class=\"text\">
 					<div class=\"logo-slider\"><img src=\"img/lcpd_conefecto_sinfondo.png\"></div>
@@ -173,7 +170,6 @@ while ($R=mysql_fetch_assoc($C)){
 		$st="<strong class=\"upper\">".$R["seccion"]."</strong> ";
 
 	echo "<div class=\"mySlides fade\">
-	            <div class=\"filter\"></div>
 				<img src=\"sitio/jpg/".$R["img_1"]."\" style=\"width:100%;\">
 				<div class=\"text\">
 				<div class=\"logo-slider\"><img src=\"img/lcpd_conefecto_sinfondo.png\"></div>
