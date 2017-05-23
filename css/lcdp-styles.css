@@ -1,12 +1,7 @@
-@font-face {
-    font-family: 'Titillium Web', sans-serif;
-    font-family: 'Fjalla One', sans-serif;
-}
-
 body {
-	background-color: #FFF;
-  font-family: 'Titillium Web', sans-serif !important;
-  font-size: 12px;
+    background-color: #FFF;
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 12px;
 	line-height: 20px;
 }
 .clear {
@@ -15,49 +10,40 @@ body {
 .clear-big {
     height: 30px;
 }
-.titles {
-    font-family: 'Fjalla One', sans-serif;
-}
 .agenda-link{
+    font-family: 'Fjalla One', sans-serif;
     border: 1px solid red;
-    width: 100%;
-    display: inline-block;
+    height: 64px;
     padding: 8px;
+    margin: 8px auto;
+    max-width: 1052px;
 }
-.agenda-link .titulo-agenda{
+.agenda-link .titulo-agenda {
     position: relative;
     float: left;
-    width: 40%;
+    width: 51%;
     margin-left: 2%;
-    font-size: 30px;
+    font-size: 34px;
     color: #1b4b5e;
-    letter-spacing: 3px;
-    font-weight: bolder;
+    letter-spacing: 6px;
 }
 .agenda-link .inner{
     float: left;
-    width: 32%;
+    width: 26%;
     font-size: 14px;
     color: #1b4b5e;
-    letter-spacing: 7px;
-    font-weight: bolder;
-    margin-left: 3%;
-}
-
-@media(max-width: 800px) {
-    .agenda-link .btn {
-        font-size: 36px;
-    }
+    letter-spacing: 5px;
+    margin-left: 2%;
 }
 
 .agenda-link .btn {
     float: right;
-    width: 18%;
-    font-size: 11px;
+    width: 14%;
+    font-size: 22px;
     color: #eee;
     background-color: #1b4b5e;
     letter-spacing: 5px;
-    font-weight: bolder;
+    border-radius: 0 !important;
 }
 div.ad-one {
     width: 98%;
@@ -87,13 +73,15 @@ div.ad-one {
 
 .nota-box {
     position: relative;
-    width: 320px;
-    height: 320px;
+    margin: 8px;
+    float: left;
+    max-width: 340px;
+    max-height: 340px;
     overflow: hidden;
 }
 .nota-box img{
     position: relative;
-    top: 0%;
+    top: 0;
     left: -50%;
 }
 .overlay {
@@ -103,15 +91,9 @@ div.ad-one {
     left: 0;
     right: 0;
     width: 100%;
-    opacity: 0.6;
     height: 100%;
-    transition: .5s ease;
-    background-color: #1b4b5e;
 }
 .nota-box:hover .overlay {
-    opacity: 0.3;
-    height: 100%;
-    background-color: yellow;
     cursor:pointer
 }
 .nota-box p.fecha{
@@ -136,9 +118,43 @@ div.ad-one {
     height: 100%;
     text-align: center;
 }
+.third-text-content {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    bottom: -100px;
+    max-height: 220px;
+}
 .text-content a:hover{
     text-decoration: none;
     color: #fff;
+}
+.third-text-content a{
+    color: #fff;
+}
+.third-text-content a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.third-text-content .title{
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 4px;
+    min-height: 120px;
+}
+.third-text-content .seccion{
+    font-size: 14px;
+    padding-top: 5px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+}
+.third-text-content .txt{
+    font-size: 12px;
+    padding-top: 5px;
+    color: #eee;
+    text-align: center;
 }
 
 .picture {
