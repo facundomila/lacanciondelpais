@@ -11,7 +11,6 @@
     display: inline-block;
     color: #265d8c;
     text-align: center;
-		margin-bottom: 20px;
 }
 .seccion-box .content{
 
@@ -29,14 +28,6 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0072', endColorstr='#ff0000',GradientType=1 ); /* IE6-9 */
 }
 </style>
-
-<div class="container-fluid" style="padding:0">
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<div class="w3-main">
-  <!-- Photo grid (modal) -->
-
 <?php
 require_once "sistema.inc.php";
 require_once __PATH_FUN__."tiempo.fun.php";
@@ -75,11 +66,8 @@ $descripcion=textoContent("Secci�n de notas de 'La Canci�n del Pa�s', web 
 
 require_once __PATH_INC__."header.inc.php";
 
-echo "<div class=\"container\" style=\"width:100%;margin:15px 0 0 0\">
-		<div class=\"row\">
-    	<div class=\"col-md-1\"></div>
-    	<div class=\"col-md-10\">
-			<div class=\"seccion-box\"><div class=\"head\">".$Rs["seccion"].($Rsub["subseccion"] ? " � ".$Rsub["subseccion"] : "")."</div>\n";
+echo "<div class=\"container\"><div class=\"seccion-head\">MUSICA</div></div>";
+echo "<div class=\"container\" style=\"max-width:1098px\">";
 
 $subLink="";
 $subseccion="";
@@ -117,8 +105,8 @@ while ($R=mysql_fetch_assoc($C)) {
 		if ($R2=mysql_fetch_assoc($C2)) {
 			$subseccion=$R2["subseccion"];
 			$subLink=$R2["link"]."/";
-		}
-
+		}	
+				
 	}
 	mysql_free_result($C2);
 	$enlaceProvincia ="";
@@ -132,12 +120,12 @@ while ($R=mysql_fetch_assoc($C)) {
 			if($R["ciudad"]){
 				$enlaceCiudad = "&raquo; <span>".$R["ciudad"]."</span>";
 			}
-		}
-
+		}			
+		
 	}
 	mysql_free_result($C3);
 //echo "<script>console.log('".$linkPv."');</script>";
-
+	
 	$img=(($subID==2 && $R["img_2"]) || $R["img_1"]=="" ? $R["img_2"] : $R["img_1"]);
 	if ($R["Id"]>540 && $subID!=2) $img="th$img";
 	if ($img) {
@@ -146,28 +134,19 @@ while ($R=mysql_fetch_assoc($C)) {
 			$h=round(205*$h/$w);
 		else
 			$h=114;
-
-		echo "<div class=\"w3-third\"><div class=\"\"><img src=\"sitio/jpg/$img\" height=\"360px\" alt=\"".textoContent($R["titulo"])."\">";
-
+		
+		echo "<div class=\"nota-box\"><img class=\"seccion\" src=\"sitio/jpg/$img\" width=\"360px\" alt=\"".textoContent($R["titulo"])."\">";
 		echo "<div class=\"overlay\"><div class=\"third-text-content\">";
-
-		echo "<div class=\"fecha\">".fechaLarga($R["fecha"])."<span class=\"upper\">".(!$Rsub["id"] && $R["subseccionID"] ? " / <a href=\"notas/".$Rs["link"]."/$subLink\">$subseccion</a>": "").$enlaceProvincia.$enlaceCiudad."</span></div>\n";
-
-		echo "<div class=\"txt\">".$R["bajada"]."</div>\n";
-
-		echo "<div class=\"social\">";
-		echo "<a target=\"_blank\" href=\"http://www.facebook.com/sharer.php?u=".__BASE__."notas/".$Rs["link"]."/$subLink".$R["link"].".html\"><img src=\"img/icoFBsmall.png\" title=\"compartir en Facebook\" alt=\"compartir en Facebook\"></a> \n";
-		echo "<a target=\"_blank\" href=\"http://twitter.com/intent/tweet?text=".textoContent($R["titulo"], 115)." ".__BASE__."notas/".$Rs["link"]."/$subLink".$R["link"].".html\" class=\"twitter\"><img src=\"img/icoTWsmall.png\" title=\"compartir en Twitter\" alt=\"compartir en Twitter\"></a> \n";
-		echo "<g:plusone size=\"small\" annotation=\"none\" href=\"".__BASE__."notas/".$Rs["link"]."/$subLink".$R["link"].".html\"></g:plusone>\n";
-		echo "</div>\n";
-
-		echo "<div class=\"link\"><a href=\"notas/".$Rs["link"]."/$subLink".$R["link"].".html\">leer+</a></div>\n";
-		echo "</div></div><div class=\"clear\"></div>\n";
-		echo "</div></div>\n";
-	}
+		echo "<a href=\"notas/".$Rs["link"]."/$subLink".$R["link"].".html\">";
+		echo "<div class=\"title\">".$R["titulo"]."</div>\n";
+        echo "<div class=\"seccion\">".$R["seccion"].($subseccion ? " &raquo; $subseccion" : "")."</div></a>\n";
+        echo "</div></div></div>\n";
+	}	
 }
+
 ?>
-</div></div></div><div class="col-md-1"></div></div>
+</div>
+<div class="clear-big"></div>
 <!-- componente footer -->
 <div class="container-fluid" style="background-color: #eee">
 <div class="container" style="width:80%">

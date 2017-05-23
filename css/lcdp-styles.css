@@ -18,6 +18,17 @@ body {
     margin: 8px auto;
     max-width: 1052px;
 }
+.seccion-head {
+    font-family: 'Fjalla One', sans-serif;
+    border: 1px solid red;
+    text-align: center;
+    font-size: 24px;
+    color: #1b4b5e;
+    height: 52px;
+    padding: 8px;
+    margin: 8px auto;
+    max-width: 1052px;
+}
 .agenda-link .titulo-agenda {
     position: relative;
     float: left;
@@ -83,6 +94,11 @@ div.ad-one {
     position: relative;
     top: 0;
     left: -50%;
+}
+.nota-box img.seccion {
+    position: relative;
+    top: 0;
+    left: 0;
 }
 .overlay {
     position: absolute;
