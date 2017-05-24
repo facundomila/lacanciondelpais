@@ -303,3 +303,148 @@ div.ad-one {
   font-size: 20px;
   color: #ff4330;
 }
+
+.nota-img-head {
+    width: 100%;
+    height: 465px;
+    overflow: hidden;
+    position: relative;
+}
+.nota-img-head img {
+    width: 100%;
+    position: relative;
+    top: -15%;
+}
+.logo-nota {
+    margin: 35px 50%;
+    position: relative;
+    left:-50px;
+}
+.seccion-nota {
+    border: 1px solid #ff4330;
+    font-family: 'Fjalla One', sans-serif;
+    margin: 2px auto 10px;
+    min-width: 190px;
+    max-width: 260px;
+    text-align: center;
+    color: #1b4b5e;
+    letter-spacing: 3px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+.fecha-nota {
+    font-family: 'Raleway', sans-serif;
+    color: #777;
+    font-weight: bolder;
+    margin: 0 auto 15px;
+    width: 80%;
+    text-align: right;
+}
+.compartir {
+    color: #777;
+    margin: 0 auto 5px;
+    width: 80%;
+    text-align: right;
+    font-size: 18px;
+}
+.compartir i {
+    padding-left: 5px;
+}
+.content {
+    margin: 0;
+    width: 80%;
+    font-family: 'Raleway', sans-serif;
+}
+.nota h1 {
+    color: #1b4b5e;
+    font-family: 'Fjalla One', sans-serif;
+    margin: 15px auto 35px;
+    width: 500px;
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+div.nota a:hover{
+    color: red;
+    text-decoration: none;
+}
+.content {
+    width: 100%;
+}
+.content p{
+    color: #1b4b5e;
+    width: 80%;
+    margin: 20px auto;
+}
+.epigrafe {
+    margin: 0;
+    color: white;
+    text-align: center;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff007f+0,ff0000+100 */
+    background: #ff4330; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ff007f 0%, #ff4330 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ff007f 0%,#ff4330 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ff007f 0%,#ff4330 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff007f', endColorstr='#ff4330',GradientType=1 ); /* IE6-9 */
+}
+.epigrafe img{
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0px !important;
+}
+.content img.left{
+    width: 90% !important;
+    margin-right: 10%;
+}
+.content img.right{
+    width: 90% !important;
+    margin-left: 10%;
+}
+.show-comments-box {
+    width: 80%;
+    margin: 0 10%;
+}
+.show-comments-box .title{
+    color: #1b4b5e;
+    font-size: 24px;
+}
+.show-comments-box .each-comment{
+    color: #333;
+    font-size: 14px;
+    background-color: #eee;
+}
+.show-comments-box .fecha{
+    color: #333;
+    font-size: 12px;
+}
+.show-comments-box .nombre{
+    color: green;
+    font-size: 12px;
+}
+.show-comments-box .comentario{
+    color: red;
+    font-size: 12px;
+}
+.nota-comment-box {
+    width: 100%;
+}
+.nota-comment-box .title{
+    color: #1b4b5e;
+    font-size: 24px;
+}
+.nota-comment-title input{
+    color: #333;
+    font-size: 16px;
+    padding: 8px;
+}
+.cabezal-parrafo{
+    color: #1b4b5e;
+    font-size: 16px;
+    padding: 8px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    border-bottom: 2px solid red;
+    width: 80%;
+    margin: 10%;
+}
