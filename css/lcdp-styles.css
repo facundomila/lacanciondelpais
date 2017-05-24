@@ -188,8 +188,8 @@ div.ad-one {
   position: relative;
   float: left;
   margin: 0 15px 10px 0px;
-  min-width: 215px;
-  min-height: 215px;
+  max-width: 215px;
+  max-height: 215px;
   background-color: red;
   overflow: hidden;
 }
