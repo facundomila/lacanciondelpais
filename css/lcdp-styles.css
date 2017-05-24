@@ -279,3 +279,27 @@ div.ad-one {
 .agenda-clear:last-child {
     height: 0;
 }
+.contact-info {
+  padding: 16px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #1b4b5e;
+  letter-spacing: 3px;
+}
+.contact-info ul{
+  margin-top: 16px;
+}
+.contact-info li{
+  font-size: 14px;
+  list-style: none;
+  padding: 9px;
+  text-transform: uppercase;
+  color: #1b4b5e;
+  letter-spacing: 3px;
+}
+.contact-info i{
+  padding: 2px;
+  font-size: 20px;
+  color: #ff4330;
+}
