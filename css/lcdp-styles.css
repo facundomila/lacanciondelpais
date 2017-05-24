@@ -28,6 +28,7 @@ body {
     padding: 8px;
     margin: 8px auto;
     max-width: 1052px;
+    letter-spacing: 3px;
 }
 .agenda-link .titulo-agenda {
     position: relative;
@@ -172,7 +173,110 @@ div.ad-one {
     color: #eee;
     text-align: center;
 }
-
 .picture {
     display: block;
+}
+.agenda .item {
+  position: relative;
+  font-family: 'Fjalla One', sans-serif;
+  padding: 10px 0;
+  margin: 8px auto;
+  max-width: 1052px;
+  min-height: 235px;
+}
+.item .img{
+  position: relative;
+  float: left;
+  margin: 0 15px 10px 0px;
+  min-width: 215px;
+  min-height: 215px;
+  background-color: red;
+
+}
+.item .titulo {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ff2651;
+  letter-spacing: 3px;
+}
+.item .titulo a {
+  color: #1b4b5e;
+  text-transform: none;
+}
+.item .titulo a:hover {
+  text-decoration: none;
+}
+.item .descripcion {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #1b4b5e;
+}
+.item .lugar {
+  position: absolute;
+  bottom: 4px;
+  left: 230px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #1b4b5e;
+  letter-spacing: 2px;
+}
+.item .horario {
+  position: absolute;
+  letter-spacing: 2px;
+  bottom: 26px;
+  left: 230px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ff2651;
+}
+.agenda-menu {
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  font-size: 16px;
+  color: #1b4b5e;
+  height: 38px;
+  padding: 8px;
+  margin: 8px auto;
+  max-width: 1052px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.fecha-larga {
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  height: 42px;
+  padding: 8px;
+  margin: 8px auto;
+  max-width: 1052px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff007f+0,ff0000+100 */
+  background: #ff4330; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ff007f 0%, #ff4330 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ff007f 0%,#ff4330 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ff007f 0%,#ff4330 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff007f', endColorstr='#ff4330',GradientType=1 ); /* IE6-9 */
+}
+.img-filter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #1b4b5e;
+  opacity: 0.3;
+}
+.agenda-clear {
+  margin: 10px auto;
+  height: 4px;
+  max-width: 1052px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff007f+0,ff0000+100 */
+  background: #ff4330; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ff007f 0%, #ff4330 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ff007f 0%,#ff4330 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ff007f 0%,#ff4330 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff007f', endColorstr='#ff4330',GradientType=1 ); /* IE6-9 */
+}
+.agenda-clear:last-child {
+    height: 0;
 }

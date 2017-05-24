@@ -1,35 +1,3 @@
-<style>
-.agenda-box {
-	width: 100%;
-}
-.agenda-box .head{
-	border: 1px solid red;
-    font-size: 18px;
-    padding: 8px;
-    width: 100%;
-    display: inline-block;
-    color: #265d8c;
-    text-align: center;
-}
-.agenda-box .content{
-
-}
-.agenda-box .fecha-larga{
-	width: 100%;
-	color: #fff;
-    font-size: 14px;
-    font-weight: bolder;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0072+0,ff0000+100 */
-	background: #ff0072; /* Old browsers */
-	background: -moz-linear-gradient(left,  #ff0072 0%, #ff0000 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(left,  #ff0072 0%,#ff0000 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to right,  #ff0072 0%,#ff0000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0072', endColorstr='#ff0000',GradientType=1 ); /* IE6-9 */
-}
-</style>
-
-<div class="container-fluid" style="padding:0">
-
 <?php
 require_once "sistema.inc.php";
 require_once __PATH_FUN__."imagenes.fun.php";
@@ -52,9 +20,9 @@ $ok=false;
 if (asp()) {
 	if ($_PDB["url"]=="http://")
 		$_PDB["url"]="";
-	
+
 	$img=imagenPost(__PATH_IMG__.$imagenDir.DS, "agenda_eventos", 0, "imagen", array(array("s" => "", "w" => 440, "h" => 330, "f" => 3), array("s" => "th", "w" => 220, "h" => 175, "f" => 3)));
-	
+
 	mysql_query("INSERT INTO agenda_eventos (tipoID, tipo, titulo, imagen, descripcion, lugar, direccion, url, nombre, email, relacionID, relacion) VALUES ('".$_PDB["tipoID"]."', '".$_PDB["tipo"]."', '".$_PDB["titulo"]."', '$img', '".$_PDB["descripcion"]."', '".$_PDB["lugar"]."', '".$_PDB["direccion"]."', '".$_PDB["url"]."', '".$_PDB["nombre"]."', '".$_PDB["email"]."', '".$_PDB["relacionID"]."', '".$_PDB["relacion"]."')");
 	$eid=mysql_insert_id();
 	foreach ($_POST as $var => $val) {
@@ -67,24 +35,21 @@ if (asp()) {
 	header("location: agenda.html?ok=1");
 	exit;
 }
-	
-require_once __PATH_INC__."header.inc.php";
 
+require_once __PATH_INC__."header.inc.php";
 ?>
-<div class="container" style="width:80%;margin-top:15px"><div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-		<div class="agenda-box">
-		<div class="head">AGENDA</div>
-<div class="content">
+
+<div class="container">
+	<div class="seccion-head">AGENDA</div>
+</div>
+<div class="container" style="max-width:1098px">
 <?php
 if (isset($_GET["ok"])) {
-	echo "<br><h3>Solicitud recibida</h3><br>\n";
-	echo "<p>¡Muchas gracias por colaborar con nuestra agenda!</p>\n";
-	echo "<p>Muy pronto revisaremos tu solicitud y la publicaremos en esta sección.</p>\n";
-	echo "<br>";
-	echo "<p><u><strong>ATENCIÓN:</strong></u><br>En la agenda se muestran los eventos de los próximos 7 días, si cargaste fechas posteriores se visualizarán cuando falte una semana para el evento.</p>\n";
-	echo "<br><br><p><a href=\"agenda.html\">&laquo; Volver a la agenda</a></p>\n";
+	echo "<div class=\"success-message-agenda\"><h3>Solicitud recibida</h3>\n";
+	echo "<p>ï¿½Muchas gracias por colaborar con nuestra agenda!</p>\n";
+	echo "<p>Muy pronto revisaremos tu solicitud y la publicaremos en esta secciï¿½n.</p>\n";
+	echo "<p><u><strong>ATENCIï¿½N:</strong></u>En la agenda se muestran los eventos de los prï¿½ximos 7 dï¿½as, si cargaste fechas posteriores se visualizarï¿½n cuando falte una semana para el evento.</p>\n";
+	echo "<p><a href=\"agenda.html\">&laquo; Volver a la agenda</a></div>\n";
 }
 else {
 $diaAnt="";
@@ -94,28 +59,23 @@ $C=mysql_query("SELECT agenda_eventos.*, fecha FROM agenda_fechas, agenda_evento
 while ($R=mysql_fetch_assoc($C)) {
 	$dia=substr($R["fecha"], 0, 10);
 	if ($diaAnt!=$dia) {
-		$txt.="<div class=\"fecha-larga\">".dia($dia)." ".fechaLargaSinAno($dia)."</h2>\n";
+		$txt.="<div class=\"fecha-larga\">".dia($dia)." ".fechaLargaSinAno($dia)."</div>\n";
 		$sMen.=" &bull; <a href=\"agenda.html#dia-$dia\">".dia($dia)."</a>";
 		$diaAnt=$dia;
 	}
 	$preLink=($R["url"] ? "<a target=\"_blank\" href=\"".$R["url"]."\">" : "");
 	$posLink=($R["url"] ? "</a>" : "");
-	
+
 	$txt.="<div class=\"item\">";
-	
+	$txt.="<div class=\"img\"><div class=\"img-filter\"></div>".($R["imagen"] ? "$preLink<img src=\"img/agenda/".$R["imagen"]."\">$posLink" : "")."</div>\n";
 	$txt.="<div class=\"info\">";
-	$txt.="<p class=\"lugar\"><strong>".hora($R["fecha"])." hs</strong>".($R["lugar"] || $R["direccion"] ? " - ".$R["lugar"].($R["lugar"] && $R["direccion"] ? ", " : "").$R["direccion"] : "").".</p>\n";
-	$txt.="<h3>".($R["tipoID"] && isset($tipos[$R["tipoID"]]) ? "<span class=\"tipo\">".$tipos[$R["tipoID"]]."</span> - " : ($R["tipo"] ? "<span class=\"tipo\">".$R["tipo"]."</span> - " : "")).$preLink.$R["titulo"].$posLink."</h3>\n";
-	$txt.="</div>\n";
-	$txt.="<div class=\"img\">".($R["imagen"] ? "$preLink<img src=\"img/agenda/".$R["imagen"]."\">$posLink" : "")."</div>\n";
-	$txt.="<div class=\"info\">";
+	$txt.="<div class=\"titulo\">".($R["tipoID"] && isset($tipos[$R["tipoID"]]) ? "<span class=\"tipo\">".$tipos[$R["tipoID"]]."</span> | " : ($R["tipo"] ? "<span class=\"tipo\">".$R["tipo"]."</span> - " : "")).$preLink.$R["titulo"].$posLink."</div>\n";
 	if ($R["descripcion"])
-		$txt.="<p>".nl2br($R["descripcion"])."</p>\n";
-	
-	
-	$txt.="</div>\n";
-	$txt.="<div class=\"clear\"></div>\n";
-	$txt.="</div>\n";
+	$txt.="<div class=\"descripcion\">".nl2br($R["descripcion"])."</div>\n";
+	$txt.="<div class=\"horario\">".hora($R["fecha"])." hs</div>\n";
+	$txt.="<div class=\"lugar\">".($R["lugar"] || $R["direccion"] ? "".$R["lugar"].($R["lugar"] && $R["direccion"] ? ", " : "").$R["direccion"] : "").".</div>\n";
+	$txt.="</div></div>\n";
+	$txt.="<div class=\"agenda-clear\"></div>\n";
 }
 mysql_free_result($C);
 
@@ -130,41 +90,17 @@ if ($R=mysql_fetch_array($C)) {
 }
 mysql_free_result($C);
 
-if ($sMen)
-	echo "<div class=\"agendaMenu\">".substr($sMen, 8)."</div>\n";
-
+if ($sMen) {
+	echo "<div class=\"agenda-menu\">".substr($sMen, 8)."</div>\n";
+}
 if ($txt) {
-?>
-<div class="right"><a class="btn formBtn" href="agenda.html#agendaForm" onclick="return agendaFormOpen();">Agreg&aacute; tu evento</a></div>
-<?php
 	echo "<div class=\"agenda\">$txt</div>\n";
 }
 else
-	echo "<br><p>No hay eventos futuros en la agenda.</p><p>Volv&eacute; a consultarla en los pr&oacute;ximos d&iacute;as.</p>";
+	echo "<p>No hay eventos futuros en la agenda.</p><p>Volv&eacute; a consultarla en los pr&oacute;ximos d&iacute;as.</p>";
 ?>
-<div class="right"><a class="btn formBtn" href="agenda.html#agendaForm" onclick="return agendaFormOpen();">Agreg&aacute; tu evento</a></div>
-<script type="text/javascript" src="js/form2.js<?php echo "?".rand(111111,999999); ?>"></script>
-<script type="text/javascript">
-<?php
-$ano1=(int)substr(HOY, 0, 4);
-$mes1=(int)substr(HOY, 5, 7);
 
-$mes2=$mes1+1;
-$ano2=$ano1;
-if ($mes2>12) {
-	$mes2=1;
-	$ano2++;
-}
-$dias1=diasMes($mes1, $ano1);
-$dias2=diasMes($mes2, $ano2);
-echo "var dias={ 'm-$ano1-".($mes1<10 ? "0" : "")."$mes1': $dias1, 'm-$ano2-".($mes2<10 ? "0" : "")."$mes2': $dias2 };\n";
-?>
-function strMeses() {
-	var t='<option value="<?php echo $ano1."-".($mes1<10 ? "0" : "").$mes1; ?>"><?php echo mes($mes1); ?></option>\n';
-	t+='<option value="<?php echo $ano2."-".($mes2<10 ? "0" : "").$mes2; ?>"><?php echo mes($mes2); ?></option>\n';
-	return t;	
-}
-</script>
+
 <div id="agendaForm" class="form">
 <h2>Agreg&aacute; tu evento:</h2>
 <p>Complet&aacute; el siguiente formulario para agregar tu evento a nuestra agenda:</p>
@@ -180,7 +116,7 @@ foreach ($tipos2 as $var => $val) {
 <option value="0">Otro...</option>
 </select><input class="texto" type="text" id="tipo" name="tipo" value="" maxlength="30" style="display: none; width: 65%;"> <input type="button" class="btn" id="tipoBtn" value="Reiniciar" onclick="resetTipo()" style="display: none;"></p>
 <p><label for="titulo">T&iacute;tulo*:</label><br><input class="texto" type="text" id="titulo" name="titulo" value="" maxlength="100"></p>
-<p><label for="imagen">Imagen*:</label><br><input class="texto2" type="file" id="imagen" name="imagen" value=""><br>&nbsp;&nbsp;SÓLO IMAGEN SIN TEXTO. NO ENVIAR FLYERS.<br>&nbsp;&nbsp;La imagen debe ser formato jpg. Máximo 2 MB. Será reescalada y cortada a 440px x 330px</p>
+<p><label for="imagen">Imagen*:</label><br><input class="texto2" type="file" id="imagen" name="imagen" value=""><br>&nbsp;&nbsp;Sï¿½LO IMAGEN SIN TEXTO. NO ENVIAR FLYERS.<br>&nbsp;&nbsp;La imagen debe ser formato jpg. Mï¿½ximo 2 MB. Serï¿½ reescalada y cortada a 440px x 330px</p>
 <p><label for="descripcion">Descripci&oacute;n / sinopsis breve / participantes*: (<span id="descripcionChar">300 caracteres disponibles</span>)</label><br><textarea class="texto" id="descripcion" name="descripcion" onkeyup="chText('descripcion', 300)"></textarea></p>
 <p><label for="url">Link:</label><br><input class="texto" type="text" id="url" name="url" value="http://" maxlength="200"></p>
 <p><label for="lugar">Lugar*:</label><br><input class="texto" type="text" id="lugar" name="lugar" value="" maxlength="50"></p>
@@ -192,25 +128,25 @@ foreach ($tipos2 as $var => $val) {
 <option value="">Mes...</option>
 <option value="<?php echo $ano1."-".($mes1<10 ? "0" : "").$mes1; ?>"><?php echo mes($mes1); ?></option>
 <option value="<?php echo $ano2."-".($mes2<10 ? "0" : "").$mes2; ?>"><?php echo mes($mes2); ?></option>
-</select> / 
+</select> /
 <select class="texto" id="dia0" name="dia0" style="width: 80px; text-align: right;">
 <option value="">D&iacute;a...</option>
 </select>
- - 
+ -
 <select class="texto" id="hora0" name="hora0" style="width: 95px; text-align: right;">
 <option value="">Hora...</option>
 <?php
 for ($a=0; $a<24; $a++) {
-	echo "<option value=\"".($a<10 ? "0" : "")."$a\">".($a<10 ? "0" : "")."$a</option>\n";	
+	echo "<option value=\"".($a<10 ? "0" : "")."$a\">".($a<10 ? "0" : "")."$a</option>\n";
 }
 ?>
 </select>
- : 
+ :
 <select class="texto" id="min0" name="min0" style="width: 95px; text-align: right;">
 <option value="">Minuto...</option>
 <?php
 for ($a=0; $a<60; $a+=5) {
-	echo "<option value=\"".($a<10 ? "0" : "")."$a\">".($a<10 ? "0" : "")."$a</option>\n";	
+	echo "<option value=\"".($a<10 ? "0" : "")."$a\">".($a<10 ? "0" : "")."$a</option>\n";
 }
 ?>
 </select> <input type="button" class="btn" value="Borrar" onclick="delFecha(0)" style="display: none">
@@ -226,7 +162,7 @@ for ($a=0; $a<60; $a+=5) {
 <option value="">Seleccion&aacute; una opci&oacute;n...</option>
 <?php
 foreach ($agendaRels as $var => $val) {
-	echo "<option value=\"$var\">$val</option>\n";	
+	echo "<option value=\"$var\">$val</option>\n";
 }
 ?>
 </select><input class="texto" type="text" id="relacion" name="relacion" value="" maxlength="30" style="display: none; width: 65%;"> <input type="button" class="btn" id="relacionBtn" value="Reiniciar" onclick="resetRel()" style="display: none;"></p>
@@ -246,7 +182,7 @@ foreach ($agendaRels as $var => $val) {
 	<div class="clear-big"></div>
 	<div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-2"><span style="font-size: 12px; color: #265d8c;">@ La Canción del País 2017</span></div>
+        <div class="col-md-2"><span style="font-size: 12px; color: #265d8c;">@ La Canciï¿½n del Paï¿½s 2017</span></div>
         <div class="col-md-8"></div>
         <div class="col-md-1"></div>
     </div>
