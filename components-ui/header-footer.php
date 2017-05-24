@@ -79,9 +79,8 @@ div.contacto .btn{
    cursor: pointer;
 }
 div.social a{
-    line-height: 13px;
-    font-size: 32px;
-    font-weight: bolder;
+    line-height: 12px;
+    font-size: 22px;
     color: #1b4b5e;
 }
 div.social a:hover{
@@ -97,12 +96,12 @@ div.social input{
    font-size: 11px;
    background-color: #d0d0d0;
    padding: 2px 6px;
-   margin: 26px 2% 0 0;
+   margin: 35px 2% 0 0;
 }
 div.social .btn{
    width: 6%;
    color: #ff4330;
-   margin-top: 18px;
+   margin-top: 25px;
    background-color: transparent;
    font-size: 14px;
    cursor: pointer;
@@ -128,7 +127,7 @@ div.logo img{
   <div class="row">
     <div class="col-md-1" style="padding-left:5px !important;"></div>
     <div class="col-md-2" style="min-width:170px; height:80px; border-left: solid 1px #ff4330; padding: 0 25px 0 7px; margin-bottom:15px">
-      <div class="name"><a href="/lacanciondelpais.com.ar/">LA CANCIÓN DEL PAÍS</a></div>
+      <div class="name"><a href="/lacanciondelpais.com.ar/"><img src="img/iso_header.png"></a></div>
       <div class="logo"><a href="/lacanciondelpais.com.ar/"><img src="img/lcpd_conefecto_sinfondo.png"></a></div>
     </div>
     <div class="col-md-2" style="min-width:170px; height:80px; border-left: solid 1px #ff4330; padding: 0 15px 0 7px; margin-bottom:15px">

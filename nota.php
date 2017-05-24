@@ -86,16 +86,6 @@ echo "<div class=\"fecha-nota\">".fechaLarga($Rc["fecha"])."</div>\n";
 echo "<div class=\"content\">".trim($Rc["cuerpo"])."</div>\n";
 ?>
 
-<div class="cabezal-parrafo">
-	<img src="img/lcpd_conefecto_sinfondo.png" style="width:50px;height:50px;margin:7px">
-	<p style="width:63%;float:right;text-align:right">ESCUCHA LA ENTREVISTA ENTEVISTA ENTERA EN NUESTRO CANAL DE YOUTUBE</p>
-</div>
-
-<div class="container">
-	<?php
-		include('components-ui/mas-notas.php');
-	?>
-</div>
 <?php
 
 $ini=true;
