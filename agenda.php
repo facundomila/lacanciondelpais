@@ -42,7 +42,7 @@ require_once __PATH_INC__."header.inc.php";
 <div class="container">
 	<div class="seccion-head">AGENDA</div>
 </div>
-<div class="container" style="max-width:1098px">
+<div class="container" style="max-width:980px">
 <?php
 if (isset($_GET["ok"])) {
 	echo "<div class=\"success-message-agenda\"><h3>Solicitud recibida</h3>\n";

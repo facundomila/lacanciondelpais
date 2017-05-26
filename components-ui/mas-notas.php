@@ -1,4 +1,4 @@
-<div class="container" style="max-width:1098px;">
+<div class="container" style="max-width:980px;">
 
 <?php
 $ini=true;

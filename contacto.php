@@ -7,7 +7,7 @@ require_once __PATH_INC__."header.inc.php";
 <div class="container">
 	<div class="seccion-head">INFORMACIÓN DE CONTACTO</div>
 </div>
-<div class="container" style="max-width:1098px">
+<div class="container" style="max-width:980px">
 <div class="contact-info">Si querés comunicarte, podés hacerlo a través de:
 <ul>
   <li><i class="fa fa-phone-square" aria-hidden="true"></i> (0341) 447-2395 / 447-2396</li>
