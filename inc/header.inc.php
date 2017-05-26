@@ -80,7 +80,7 @@ ga('send', 'pageview');
 </script>
 </head>
 <body>
-	<div class="container" style="width: 80%; margin-top:15px">
+	<div class="container" id="header">
 			<?php
 				include './components-ui/header-footer.php';
 			?>

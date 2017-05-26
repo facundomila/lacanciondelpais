@@ -4,6 +4,56 @@ body {
     font-size: 12px;
 	line-height: 20px;
 }
+
+@media screen and (max-width: 700px) {
+    div#menu-links {
+        display: none;
+    }
+    div#header {
+        width: 100%;
+    }
+    button.menu-phone {
+        display: block;
+    }
+}
+
+#header {
+    width: 80%;
+    margin-top:15px;
+}
+.menu-phone {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: #ff2651;
+    border: none;
+}
+.links-phone-menu {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 12px;
+    font-weight: bolder;
+    background-color: #eee;
+    display: none;
+    position: fixed;
+    top: 44px;
+    right: 15px;
+    padding: 12px;
+}
+.links-phone-menu a {
+    color: #1b4b5e;
+    text-decoration: none;
+}
+.links-phone-menu a:hover {
+    text-decoration: none;
+}
+.links-phone-menu hr{
+    margin: 10px 0px;
+    border-top: 1px solid #ccc;
+}
+.phone-links {
+    text-align: center;
+}
 .clear {
     height: 12px;
 }
@@ -12,7 +62,7 @@ body {
 }
 .agenda-link{
     font-family: 'Fjalla One', sans-serif;
-    border: 1px solid red;
+    border: 1px solid #ff2651;
     height: 64px;
     padding: 8px;
     margin: 8px auto;
@@ -20,7 +70,7 @@ body {
 }
 .seccion-head {
     font-family: 'Fjalla One', sans-serif;
-    border: 1px solid red;
+    border: 1px solid #ff2651;
     text-align: center;
     font-size: 24px;
     color: #1b4b5e;
@@ -61,18 +111,131 @@ div.ad-one {
     width: 98%;
     margin: 15px 1%;
     height: 50px;
-    background-color: red;
-    animation-name: fade-toggle;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
 
-@keyframes fade-toggle {
-    0%   {background-color: red;}
-    25%  {background-color: blue;}
-    50%  {background-color: green;}
-    75%  {background-color: yellow;}
-    100% {background-color: red;}
+div.name {
+    max-width: 120px;
+    line-height: 24px;
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #1b4b5e;
+    padding-bottom: 7px;
+}
+div.name a:hover{
+    color: #ff4330;
+    text-decoration: none;
+}
+div.horarios {
+    line-height: 12px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: #1b4b5e;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    list-style-type: none;
+    margin: -5px 0;
+    padding: 0;
+}
+nav.links a{
+    line-height: 25px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: #1b4b5e;
+}
+nav.links a:hover{
+    color: #ff4330;
+    text-decoration: none;
+}
+div.contacto ul{
+    margin: 0;
+    padding: 0;
+}
+div.contacto li{
+    list-style-type: none;
+    margin: -5px 0;
+    padding: 0;
+}
+div.contacto a{
+    line-height: 13px;
+    font-size: 13px;
+    font-weight: bolder;
+    color: #265d8c;
+}
+div.contacto a:hover{
+    color: #ff4330;
+    text-decoration: none;
+}
+div.contacto input{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    color: #666;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #e5e5e5;
+    background-repeat: no-repeat;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+div.contacto .btn{
+    border: 0px;
+    color: white;
+    background-color: #ff4330;
+    border-radius: 0px;
+    font-size: 12px;
+    padding: 2px 6px;
+    width: 100%;
+    cursor: pointer;
+}
+div.social a{
+    line-height: 12px;
+    font-size: 22px;
+    color: #1b4b5e;
+}
+div.social a:hover{
+    color: #ff4330;
+    text-decoration: none;
+}
+div.social input{
+    width: 92%;
+    box-sizing: border-box;
+    border: 0;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 11px;
+    background-color: #d0d0d0;
+    padding: 2px 6px;
+    margin: 35px 2% 0 0;
+}
+div.social .btn{
+    width: 6%;
+    color: #ff4330;
+    margin-top: 25px;
+    background-color: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    padding: 7px 2px;
+}
+div.logo {
+    position: relative;
+    overflow: hidden;
+    width: 46px;
+    height: 26px;
+}
+div.logo img{
+    position: relative;
+    width: 65px;
+    height: 65px;
+    top: -17px;
+    left: -10px;
 }
 
 .filter {

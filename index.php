@@ -62,7 +62,7 @@ $cNotas=($Rh["principal"] ? 3 : 6);
 <div class="clear-big"></div>
 <!-- componente footer -->
 <div class="container-fluid" style="background-color: #eee">
-<div class="container" style="width:80%">
+<div class="container" style="width:90%">
 	<div class="clear-big"></div>
 	<div class="container-fluid">
 	<?php

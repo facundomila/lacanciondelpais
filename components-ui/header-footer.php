@@ -1,133 +1,8 @@
-<style>
-div.name {
-    max-width: 120px;
-    line-height: 24px;
-	  font-family: 'Titillium Web', sans-serif !important;
-    font-size: 22px;
-    font-weight: bolder;
-    color: #1b4b5e;
-    padding-bottom: 7px;
-}
-div.name a:hover{
-    color: #ff4330;
-    text-decoration: none;
-}
-div.horarios {
-    line-height: 12px;
-    font-size: 12px;
-    font-weight: bolder;
-    color: #1b4b5e;
-}
-nav ul{
-    margin: 0;
-    padding: 0;
-}
-nav li{
-    list-style-type: none;
-    margin: -5px 0;
-    padding: 0;
-}
-nav.links a{
-    line-height: 25px;
-    font-size: 12px;
-    font-weight: bolder;
-    color: #1b4b5e;
-}
-nav.links a:hover{
-    color: #ff4330;
-    text-decoration: none;
-}
-div.contacto ul{
-    margin: 0;
-    padding: 0;
- }
-div.contacto li{
-    list-style-type: none;
-    margin: -5px 0;
-    padding: 0;
-}
-div.contacto a{
-    line-height: 13px;
-    font-size: 13px;
-    font-weight: bolder;
-    color: #265d8c;
-}
-div.contacto a:hover{
-    color: #ff4330;
-    text-decoration: none;
-}
-div.contacto input{
-   width: 100%;
-   box-sizing: border-box;
-   border: 2px solid #ccc;
-   color: #666;
-   border-radius: 4px;
-   font-size: 14px;
-   background-color: #e5e5e5;
-   background-repeat: no-repeat;
-   padding: 5px 10px;
-   margin-top: 5px;
-}
-div.contacto .btn{
-   border: 0px;
-   color: white;
-   background-color: #ff4330;
-   border-radius: 0px;
-   font-size: 12px;
-   padding: 2px 6px;
-   width: 100%;
-   cursor: pointer;
-}
-div.social a{
-    line-height: 12px;
-    font-size: 22px;
-    color: #1b4b5e;
-}
-div.social a:hover{
-    color: #ff4330;
-    text-decoration: none;
-}
-div.social input{
-   width: 92%;
-   box-sizing: border-box;
-   border: 0px;
-   color: #fff;
-   border-radius: 3px;
-   font-size: 11px;
-   background-color: #d0d0d0;
-   padding: 2px 6px;
-   margin: 35px 2% 0 0;
-}
-div.social .btn{
-   width: 6%;
-   color: #ff4330;
-   margin-top: 25px;
-   background-color: transparent;
-   font-size: 14px;
-   cursor: pointer;
-   float: right;
-   padding: 7px 2px;
-}
-div.logo {
-  position: relative;
-  overflow: hidden;
-  width: 46px;
-  height: 26px;
-}
-div.logo img{
-  position: relative;
-  width: 65px;
-  height: 65px;
-  top: -17px;
-  left: -10px;
-}
-</style>
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-1" style="padding-left:5px !important;"></div>
     <div class="col-md-2" style="min-width:170px; height:80px; border-left: solid 1px #ff4330; padding: 0 25px 0 7px; margin-bottom:15px">
-      <div class="name"><a href="/lacanciondelpais.com.ar/"><img src="img/iso_header.png"></a></div>
+      <div class="name"><a href="/lacanciondelpais.com.ar/"><img style="width:140px;position:relative;top:-5px;" src="img/iso_header.png"></a></div>
       <div class="logo"><a href="/lacanciondelpais.com.ar/"><img src="img/lcpd_conefecto_sinfondo.png"></a></div>
     </div>
     <div class="col-md-2" style="min-width:170px; height:80px; border-left: solid 1px #ff4330; padding: 0 15px 0 7px; margin-bottom:15px">
@@ -137,7 +12,7 @@ div.logo img{
         RADIO<br>UNIVERSIDAD<br>ROSARIO
       </div>
     </div>
-    <div class="col-md-2" style="min-width:170px; height:80px; border-left: solid 1px #ff4330; padding: 0 25px 0 7px; margin-bottom:15px">
+    <div id="menu-links" class="col-md-2" style="min-width:170px; height:80px; border-left: solid 1px #ff4330; padding: 0 25px 0 7px; margin-bottom:15px">
       <nav class="links">
           <ul>
             <li><a href="/lacanciondelpais.com.ar/notas/musica">MÚSICA</a></li>
@@ -147,7 +22,7 @@ div.logo img{
           </ul>
       </nav>
     </div>
-  <div class="col-md-2" style="min-width:170px; height:80px; border-left: solid 1px #ff4330; padding: 0 25px 0 7px; margin-bottom:15px">
+  <div id="menu-links" class="col-md-2" style="min-width:170px; height:80px; border-left: solid 1px #ff4330; padding: 0 25px 0 7px; margin-bottom:15px">
     <nav class="links">
       <ul>
         <li><a href="/lacanciondelpais.com.ar/notas/escenicas">ESCÉNICAS</a></li>
@@ -171,6 +46,25 @@ div.logo img{
       </form>
       </div>
     </div>
-    <div class="col-md-1"></div>
+    <div class="col-md-1"><button class="menu-phone" onclick=showMenu()><i class="fa fa-bars" aria-hidden="true"></i></button></div>
   </div>
 </div>
+<div class="links-phone-menu">
+    <nav class="phone-links">
+        <ul>
+            <li><a href="/lacanciondelpais.com.ar/notas/musica">MÚSICA</a></li><hr>
+            <li><a href="/lacanciondelpais.com.ar/notas/literatura">LITERATURA</a></li><hr>
+            <li><a href="/lacanciondelpais.com.ar/notas/arte">ARTE</a></li><hr>
+            <li><a href="/lacanciondelpais.com.ar/notas/audiovisuales">AUDIOVISUALES</a></li><hr>
+            <li><a href="/lacanciondelpais.com.ar/notas/escenicas">ESCÉNICAS</a></li><hr>
+            <li><a href="/lacanciondelpais.com.ar/contacto.html">SOCIEDAD</a></li><hr>
+            <li><a href="/lacanciondelpais.com.ar/contacto.html">CONTACTO</a></li><hr>
+            <li><a href="/lacanciondelpais.com.ar/contacto.html">AGENDA</a></li>
+        </ul>
+    </nav>
+</div>
+<script>
+  $(".menu-phone").click(function(){
+      $(".links-phone-menu").toggle();
+  });
+</script>
